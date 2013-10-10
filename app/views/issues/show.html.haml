@@ -1,0 +1,27 @@
+%br
+= @issue.name
+%br
+= @issue.description
+= simple_form_for :issue, :url => "/issues/#{@issue.id}", :method => :put do |f|
+	= f.input :status, collection: IssueStatus.get_statuses, selected: @issue.status.id
+	= f.input :id, as: :hidden, input_html: { value: @issue.id }
+	.form-buttons
+		= f.submit 'Изменить', class:'small button secondary', id:'submitfilter'
+%table{"style" => "width:100%"}
+	- for journal in @issue.journals
+		%tr
+			%td
+				- if journal.notes != nil
+					- if journal.user !=nil
+						= journal.user.email
+						%br
+					= journal.created_on
+					%br
+					= journal.notes
+%br
+%br
+= simple_form_for :issue_journal, :url => "/issue_journals", :method => :post do |f|
+	= f.input :notes, as: :text
+	= f.input :issue, as: :hidden, input_html: { value: @issue.id }
+	.form-buttons
+		= f.submit 'Применить', class:'small button secondary', id:'submitfilter'

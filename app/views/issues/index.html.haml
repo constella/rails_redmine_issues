@@ -1,0 +1,19 @@
+= render partial: 'form'
+
+%table
+	%tr
+		%td
+			Название
+		%td
+			Статус
+		%td
+			Дата создания
+	- for issue in @issues
+		%tr
+			%td
+				= link_to issue.name, "/issues/#{issue.id}"
+			%td
+				= issue.status.name
+			%td
+				= issue.created_on
+
