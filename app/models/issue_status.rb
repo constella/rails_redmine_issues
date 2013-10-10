@@ -33,3 +33,4 @@ class IssueStatus
 		return "#{IssuesList::DOMAIN}/#{path}#{symbol}key=#{IssuesList::REDMINE_TOKEN}"
 	end
 end
+
