@@ -34,10 +34,6 @@ class IssuesController < ApplicationController
 		 end
 	end
 
-	def new
-
-	end
-
 	def create
 		issue = {
 			"issue" => {

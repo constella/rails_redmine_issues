@@ -1,4 +1,5 @@
-= render partial: 'form'
+-if can? :read, :issues_ask
+	= render partial: 'form'
 
 %table
 	%tr
