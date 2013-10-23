@@ -2,9 +2,9 @@ require 'rest-client'
 require 'json'
 
 class IssuesController < ApplicationController
-	
+
 	before_filter :authenticate_user!
-		 
+
 	def index
 		response = RestClient.get(get_link("issues.json"))
 	 	issues_list = JSON.parse(response.body)
@@ -34,9 +34,6 @@ class IssuesController < ApplicationController
 		 end
 	end
 
-	def new
-
-	end
 
 	def create
 		issue = {

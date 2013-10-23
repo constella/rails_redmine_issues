@@ -1,5 +1,5 @@
 %br
-= simple_form_for :issue, :url => "/issues", :method => :post do |f|
+= simple_form_for :issue, :url => "/issues", :method => :post, defaults: {required: false} do |f|
 	= f.input :name
 	= f.input :tracker, collection: IssueTracker.get_trackers, include_blank: false
 	= f.input :description, as: :text

@@ -2,7 +2,7 @@
 = @issue.name
 %br
 = @issue.description
-= simple_form_for :issue, :url => "/issues/#{@issue.id}", :method => :put do |f|
+= simple_form_for :issue, :url => "/issues/#{@issue.id}", :method => :put, defaults: {required: false} do |f|
 	= f.input :status, collection: IssueStatus.get_statuses, selected: @issue.status.id
 	= f.input :id, as: :hidden, input_html: { value: @issue.id }
 	.form-buttons
@@ -20,7 +20,7 @@
 					= journal.notes
 %br
 %br
-= simple_form_for :issue_journal, :url => "/issue_journals", :method => :post do |f|
+= simple_form_for :issue_journal, :url => "/issue_journals", :method => :post, defaults: {required: false} do |f|
 	= f.input :notes, as: :text
 	= f.input :issue, as: :hidden, input_html: { value: @issue.id }
 	.form-buttons
