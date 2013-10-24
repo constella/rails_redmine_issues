@@ -37,7 +37,7 @@ class IssuesController < ApplicationController
 		 			render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
 		 		end
 			else
-				@issues << issue
+				@issue = issue
 		 	end
 		 end
 	end
