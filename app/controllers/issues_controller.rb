@@ -11,7 +11,11 @@ class IssuesController < ApplicationController
 	 	@issues = []
 	  	issues_list["issues"].each do |issue_json|
 	  		issue = Issue.new(issue_json)
-	  		if issue.user==current_user
+	  		if IssuesList::USER
+	  			if issue.user==current_user
+	   				@issues << issue
+	   			end
+	   		else
 	   			@issues << issue
 	   		end
 	 	end
