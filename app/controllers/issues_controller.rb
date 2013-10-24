@@ -30,10 +30,14 @@ class IssuesController < ApplicationController
 		if response != nil
 		 	issue_json = JSON.parse(response.body)
 		 	issue = Issue.new(issue_json['issue'])
-		 	if issue.user==current_user
-		 		@issue = issue
-		 	else
-		 		render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+	  		if IssuesList::USER
+		 		if issue.user==current_user
+		 			@issue = issue
+		 		else
+		 			render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+		 		end
+			else
+				@issues << issue
 		 	end
 		 end
 	end
