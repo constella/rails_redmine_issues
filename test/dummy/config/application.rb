@@ -7,7 +7,7 @@ require "action_view/railtie"
 require "action_mailer/railtie"
 
 Bundler.require
-require "issues_list"
+require "rails_redmine_issues"
 
 module Dummy
   class Application < Rails::Application

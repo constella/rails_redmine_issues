@@ -1,6 +1,6 @@
 require "active_support/dependencies"
 
-module IssuesList
+module RailsRedmineIssues
 
   # Our host application root path
   # We set this when the engine is initialized
@@ -14,4 +14,4 @@ module IssuesList
 end
 
 # Require our engine
-require "issues_list/engine"
+require "rails_redmine_issues/engine"

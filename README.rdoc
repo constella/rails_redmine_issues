@@ -8,9 +8,9 @@ Add this to your Gemfile and run the <tt>bundle</tt> command.
 
   gem "rails_redmine_issues"
 
-Add the module <tt>IssuesList</tt> in 'config/initializers/issues_list.rb' with following content:
+Add the module <tt>RailsRedmineIssues</tt> in 'config/initializers/issues_list.rb' with following content:
 
-  module IssuesList
+  module RailsRedmineIssues
     REDMINE_TOKEN = "API of user"
     DOMAIN = "http://redmineapp.ru"
     PROJECT = "project_id"

@@ -1,4 +1,4 @@
-module IssuesList
+module RailsRedmineIssues
 
   class Engine < Rails::Engine
 
