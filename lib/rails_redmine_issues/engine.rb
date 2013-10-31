@@ -7,10 +7,6 @@ module RailsRedmineIssues
       end
     end
 
-    initialize "rails_redmine_issues.load_static_assets" do |app|
-      app.middleware.use ::ActionDispatch::Static, "#{root}/public"
-    end
-
   end
 
 end
