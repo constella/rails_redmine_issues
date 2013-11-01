@@ -4,6 +4,7 @@ require File.expand_path("../lib/rails_redmine_issues/version", __FILE__)
 # Enginex project in your Rails apps through Git.
 Gem::Specification.new do |s|
   s.name                      = "rails_redmine_issues"
+  s.license                   = 'MIT'
   s.version                   = RailsRedmineIssues::VERSION
   s.date                      = '2013-10-23'
   s.platform                  = Gem::Platform::RUBY
