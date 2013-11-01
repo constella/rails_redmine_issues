@@ -6,7 +6,7 @@ RailsRedmineIssues is an additional gem for connection between a application and
 
 Add this to your Gemfile and run the <tt>bundle</tt> command.
 
-  gem "rails_redmine_issues", git: "git@github.com:constella/rails_redmine_issues.git"
+  gem "rails_redmine_issues", github: "constella/rails_redmine_issues"
 
 Add the module <tt>RailsRedmineIssues</tt> in 'config/initializers/issues_list.rb' with following content:
 
