@@ -2,9 +2,7 @@ require 'rest-client'
 require 'json'
 
 class IssueJournalsController < ApplicationController
-	
 	before_filter :authenticate_user!
-
 
 	def create
 		issue = {

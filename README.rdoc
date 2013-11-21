@@ -1,3 +1,29 @@
-= IssuesList
+= RailsRedmineIssues
 
-This project rocks and uses MIT-LICENSE.
+RailsRedmineIssues is an additional gem for connection between a application and the Redmine app (e.g. communication with customers)
+
+== Installation
+
+Add this to your Gemfile and run the <tt>bundle</tt> command.
+
+  gem "rails_redmine_issues", github: "constella/rails_redmine_issues"
+
+Add the module <tt>RailsRedmineIssues</tt> in 'config/initializers/issues_list.rb' with following content:
+
+  module RailsRedmineIssues
+    REDMINE_TOKEN = "API of user"
+    DOMAIN = "http://redmineapp.ru"
+    PROJECT = "project_id"
+  end
+
+1. API of user - that user will create issues from app by api, tittle of issue will have number id of current_user, provided by gem "devise"
+2. Set domain of your Redmine app
+3. Issues will be created in that project id
+
+== Getting Started
+
+To get index page simply call <tt>issues_path</tt> in view
+
+== License
+
+See LICENSE file for details
