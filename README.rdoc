@@ -23,6 +23,11 @@ Add the module <tt>RailsRedmineIssues</tt> in 'config/initializers/issues_list.r
 == Getting Started
 
 To get index page simply call <tt>issues_path</tt> in view
+This branch allows you to use cancan:
+
+  if can? :read, :issues_write
+  if can? :read, :issues_reply
+  if can? :read, :issues_close
 
 == License
 

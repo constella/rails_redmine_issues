@@ -2,7 +2,7 @@ ru:
   titles:
     table:
       title: 'Ваши вопросы:'
-      name: 'Название'
+      name: 'Заголовок'
       status: 'Статус'
       date: 'Дата создания'
     created: 'Задача создана!'
@@ -11,10 +11,10 @@ ru:
   simple_form:
     labels:
       issue:
-        name: 'Имя тикета'
+        name: 'Заголовок'
         tracker: 'Трекер'
-        description: 'Описание'
-        status: 'Статус тикета'
+        description: 'Вопрос'
+        status: 'Статус'
         submit: 'Отправить вопрос'
         save: 'Сохранить'
       issue_journal:
