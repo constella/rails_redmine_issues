@@ -1,0 +1,23 @@
+ru:
+  titles:
+    table:
+      title: 'Ваши вопросы:'
+      name: 'Название'
+      status: 'Статус'
+      date: 'Дата создания'
+    created: 'Задача создана!'
+    show:
+      description: 'Описание:'
+  simple_form:
+    labels:
+      issue:
+        name: 'Имя тикета'
+        tracker: 'Трекер'
+        description: 'Описание'
+        status: 'Статус тикета'
+        submit: 'Отправить вопрос'
+        save: 'Сохранить'
+      issue_journal:
+        note: 'Комментарии:'
+        notes: 'Комментарий'
+        submit: 'Добавить комментарий'

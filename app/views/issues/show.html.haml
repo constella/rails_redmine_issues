@@ -1,12 +1,18 @@
 %br
-= @issue.name
-%br
-= @issue.description
-= simple_form_for :issue, :url => "/issues/#{@issue.id}", :method => :put, defaults: {required: false} do |f|
-	= f.input :status, collection: IssueStatus.get_statuses, selected: @issue.status.id
-	= f.input :id, as: :hidden, input_html: { value: @issue.id }
-	.form-buttons
-		= f.submit 'Изменить', class:'small button secondary', id:'submitfilter'
+- if can? :read, :issues_close
+	= simple_form_for :issue, :url => "/issues/#{@issue.id}", :method => :put, defaults: {required: false} do |f|
+		= f.input :status, collection: IssueStatus.get_statuses, selected: @issue.status.id
+		= f.input :id, as: :hidden, input_html: { value: @issue.id }
+		.form-buttons
+			= f.submit t('simple_form.labels.issue.save'), class:'small button secondary', id:'submitfilter'
+%h3
+	= @issue.name
+%p
+	%span.subheader=t('titles.show.description')
+	%br
+	= @issue.description
+%p
+	%span.subheader=t('simple_form.labels.issue_journal.note')
 %table{"style" => "width:100%"}
 	- for journal in @issue.journals
 		%tr
@@ -18,10 +24,12 @@
 					= journal.created_on
 					%br
 					= journal.notes
-%br
-%br
-= simple_form_for :issue_journal, :url => "/issue_journals", :method => :post, defaults: {required: false} do |f|
-	= f.input :notes, as: :text
-	= f.input :issue, as: :hidden, input_html: { value: @issue.id }
-	.form-buttons
-		= f.submit 'Отправить', class:'small button secondary', id:'submitfilter'
+- if can? :read, :issues_reply
+	%br
+	%br
+	= simple_form_for :issue_journal, :url => "/issue_journals", :method => :post, defaults: {required: false} do |f|
+		= f.input :notes, as: :text
+		= f.input :issue, as: :hidden, input_html: { value: @issue.id }
+		.form-buttons
+			= f.submit t('simple_form.labels.issue_journal.submit'), class:'small button secondary', id:'submitfilter'
+=link_to 'Назад', :back, class: 'small button secondary'

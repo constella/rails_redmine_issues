@@ -1,14 +1,15 @@
--if can? :read, :issues_ask
+-if can? :read, :issues_write
 	= render partial: 'form'
-
+%p
+	%span.subheader=t('titles.table.title')
 %table
 	%tr
 		%td
-			Название
+			=t('titles.table.name')
 		%td
-			Статус
+			=t('titles.table.status')
 		%td
-			Дата создания
+			=t('titles.table.date')
 	- for issue in @issues
 		%tr
 			%td

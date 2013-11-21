@@ -3,6 +3,7 @@ require 'json'
 
 class IssueJournalsController < ApplicationController
 	before_filter :authenticate_user!
+  	authorize_resource
 
 	def create
 		issue = {

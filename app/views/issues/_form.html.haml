@@ -4,4 +4,4 @@
 	= f.input :tracker, collection: IssueTracker.get_trackers, include_blank: false
 	= f.input :description, as: :text
 	.form-buttons
-		= f.submit 'Сохранить вопрос', class:'small button secondary', id:'submitfilter'
+		= f.submit t('simple_form.labels.issue.submit'), class:'small button secondary', id:'submitfilter'

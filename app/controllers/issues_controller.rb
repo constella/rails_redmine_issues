@@ -4,6 +4,7 @@ require 'json'
 class IssuesController < ApplicationController
 
 	before_filter :authenticate_user!
+  	authorize_resource
 
 	def index
 		response = RestClient.get(get_link("issues.json"))
